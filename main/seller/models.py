@@ -14,7 +14,8 @@ class SellerRegistration(models.Model):
     confirm_password = models.CharField(max_length=128, blank=True)
     address = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=100)
-
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True ) 
 
     def check_cni(self) -> bool:
         if (
