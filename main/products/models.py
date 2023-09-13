@@ -1,10 +1,8 @@
 from django.db import models
-from seller.models import SellerRegistration
 from category.models import Category
 # Create your models here.
 
 class Product(models.Model):
-    owner = models.ForeignKey(SellerRegistration, on_delete=models.CASCADE, default=None)
     product_name = models.CharField(max_length=100, blank=False, default=None)
     description = models.TextField(blank=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)

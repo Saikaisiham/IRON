@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'seller',
     'category',
-    'products'
+    'products',
+    'base',
+    'admin_',
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [

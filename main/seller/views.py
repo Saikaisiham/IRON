@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import SellerRegistration
 from .forms import SellerRegistrationForm
 
 # Create your views here.
-def index(request):
-    return render(request, 'index.html')
 
 def register(request):
     if request.method == 'POST':
@@ -12,11 +9,14 @@ def register(request):
         if form.is_valid():
             form.save()
             print(form.cleaned_data)
-            return redirect('/')
+            return redirect('/product')
         else:
             print(form.errors)  
     else:
         form = SellerRegistrationForm()
 
     return render(request, 'registration.html', {'form': form})
+
+
+
 
